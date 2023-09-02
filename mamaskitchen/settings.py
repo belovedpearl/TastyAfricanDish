@@ -32,7 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-belovedpear-tastyafrica-j6r6o22jb8u.ws-eu104.gitpod.io',
-    'africankitchen.herokuapp.com',
+    'africankitchen-796a99515d8f.herokuapp.com',
     'localhost'
     ]
 
