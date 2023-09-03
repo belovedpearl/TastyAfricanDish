@@ -3,9 +3,6 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
-STATUS = ((0, 'DRAFTS'), (1, 'PUBLISHED'))
-
-
 class Recipe(models.Model):
     """
     Recipe Model
@@ -21,7 +18,6 @@ class Recipe(models.Model):
     recipe_image = CloudinaryField('recipeimage', default='placeholder')
     cook_time = models.PositiveIntegerField()
     # country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='countries')
-    status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='recipe_like', blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)

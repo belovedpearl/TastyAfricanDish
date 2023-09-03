@@ -1,0 +1,40 @@
+body {
+    background-color: #e5e7ea;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #5a6570;
+}
+
+/*_______________ Logo _________________ */
+#life{
+    font-family:'Great Vibes', cursive;
+    font-size: 48px;
+    font-weight: 400;
+    color: #5a6570;
+    
+}
+
+/*_______________  Nav Element ____________ */
+nav{
+    color: #5a6570;
+}
+
+/*________________  Footer __________________ */
+.dark-bg {
+    background-color: #5a6570;
+}
+
+.social-link{
+    color: #e5e7ea;
+    text-decoration: none;
+    font-size: 1.2rem;
+   
+}   
+
+.social-link:hover{
+    color:#364049 ;
+}
+footer{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Recipe Posts</h1>
+
+<ul>
+{% for recipe in recipe_list %}
+<li> {{recipe.title}}
+ {{recipe.author}}
+ {{recipe.instructions}}</li>
+ 
+ {% endfor %}
+</ul>
+{% endblock %}
+
