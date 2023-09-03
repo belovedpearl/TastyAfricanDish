@@ -2,15 +2,48 @@
 
 {% block content %}
 
-<h1>Recipe Posts</h1>
+<div class="container-fluid">
+    <div class="row">
 
-<ul>
-{% for recipe in recipe_list %}
-<li> {{recipe.title}}
- {{recipe.author}}
- {{recipe.instructions}}</li>
- 
- {% endfor %}
-</ul>
+        <!-- Recipe Entries Column -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for recipe in recipe_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                <a href="#" class="recipe-link">
+                                    <h2 class="card-title">{{ recipe.title }}</h2>                                 
+                                </a>
+                                {% if "placeholder" in recipe.recipe_image.url %}
+                                <img class="card-img-top"
+                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                {% else %}
+                                <img class="card-img-top" src=" {{ recipe.recipe_image.url }}">
+                                {% endif %}
+                                <div class="image-flash">                            
+                                    <p class="author">Posted By: {{ recipe.author }}</p>
+                                </div>
+                            </div>
+                            
+                            <hr />
+                            <p class="card-text text-muted h6"><small><span class="date_created">{{ recipe.date_created }}</span> </small><i class="far fa-heart"></i>
+                                {{ recipe.number_of_likes }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    
+</div>
+
 {% endblock %}
 
