@@ -22,14 +22,32 @@ body {
 .date_created{
     margin-right: 50px;
 }
-img{
+
+.post-image{
     width: 90%;
     height: 250px;
+}
+.details-img{
+    width:100%;
+    height: 250px;
+}
+a:hover{
+    color: #0698a8;
 }
 
 /*_______________  Nav Element ____________ */
 nav{
     color: #5a6570;
+}
+
+/* Post Details */
+.masthead {
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 33vh;
+    width: 100%;
 }
 
 /*________________  Footer __________________ */

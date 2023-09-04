@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
 <div class="container-fluid">
@@ -13,18 +13,23 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                                <a href="#" class="recipe-link">
+                                <a href="{% url 'recipe-detail' recipe.slug %}" class="recipe-link">
                                     <h2 class="card-title">{{ recipe.title }}</h2>                                 
                                 </a>
                                 {% if "placeholder" in recipe.recipe_image.url %}
-                                <img class="card-img-top"
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                <img class="card-img-top post-image"
+                                    src="{% static 'images/africa.webp' %}" alt="Recipe Placeholder Image">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ recipe.recipe_image.url }}">
+                                <img class="card-img-top post-image" 
+                                    src=" {{ recipe.recipe_image.url }}" alt="Recipe Image">
                                 {% endif %}
-                                <div class="image-flash">                            
+                                <div class="image-flash">  
+                                    <p class="text-center">{{ recipe.description }}</p>                          
                                     <p class="author">Posted By: {{ recipe.author }}</p>
+                                    <p class="text-center">{{ recipe.author }}</p>
                                 </div>
+                               
+  
                             </div>
                             
                             <hr />
