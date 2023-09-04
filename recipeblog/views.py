@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Recipe
+from .forms import RecipeForm
+from django.urls import reverse_lazy
 
 
 class RecipeView(generic.ListView):
@@ -9,6 +11,14 @@ class RecipeView(generic.ListView):
     template_name = "index.html"
     paginate_by = 8
 
+
 class RecipeDetails(generic.DetailView,):
     model = Recipe
     template_name = "details.html"
+
+
+class AddRecipe(generic.CreateView):
+    model = Recipe
+    form_class = RecipeForm
+    template_name = "addrecipe.html"
+    success_url = reverse_lazy('home') 

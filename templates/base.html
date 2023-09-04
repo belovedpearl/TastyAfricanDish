@@ -8,7 +8,11 @@
         <meta name="description" content="African food recipes, Food blog, African delicacies"/>
         <meta name="keywords" content="African, Food, Tasty, Preparation process" />
         <meta name="author" content="MamasKitchen" />
-        <title>African Menu</title>
+        <title>
+            {% block title %} 
+                African Menu 
+            {% endblock %} 
+        </title>
         <!-- Google Fonts Link-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +47,7 @@
                         <a class="nav-link {% if url_name == 'home' %} active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                    <a class="nav-link" href="{% url 'add_recipe' %}">Add Recipe</a>
                     </li>
                     
                 </ul>
