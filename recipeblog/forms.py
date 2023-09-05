@@ -9,7 +9,7 @@ class RecipeForm(forms.ModelForm):
         model = Recipe
         fields = ('title', 'author', 'description', 'ingredients', 'instructions', 'recipe_image', 'cook_time',)
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Recipe Local Name'}),
             'author': forms.Select(attrs={'class': 'form-control'}),
             'description': forms.TextInput(attrs={'class': 'form-control'}),
             'ingredients': forms.Textarea(attrs={'class': 'form-control'}),

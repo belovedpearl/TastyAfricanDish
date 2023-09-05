@@ -24,8 +24,19 @@
                                     src=" {{ recipe.recipe_image.url }}" alt="Recipe Image">
                                 {% endif %}
                                 <div class="image-flash">  
-                                    <p class="text-center">{{ recipe.description }}</p>                          
-                                    <p class="author">Posted By: {{ recipe.author }}</p>
+                                    <p class="text-center">{{ recipe.description }}</p> 
+                                                             
+                                    <p><span class="author">Posted By: {{ recipe.author }}
+
+                                        </span> 
+                                            <a href="{% url 'updaterecipe' recipe.slug %}">
+                                                <i class="fas fa-edit me-2"></i> 
+                                            </a>
+                                            <i class="fas fa-trash me-2"></i>
+                                        </span>
+                                    </p>
+                                    
+                                
                                     <p class="text-center">{{ recipe.author }}</p>
                                 </div>
                                

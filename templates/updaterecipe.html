@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Update recipe {% endblock%}
+{% block content %}
+
+{% load crispy_forms_tags %}
+<h1>Update Recipe</h1>
+<div class="form-group">
+    <form method="POST" class="my-form">
+        {% csrf_token %}
+        {% crispy form %}
+    </form>
+</div>
+
+{% endblock %}
