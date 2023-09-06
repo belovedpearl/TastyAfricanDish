@@ -27,5 +27,7 @@ class AddRecipe(generic.CreateView):
 class UpdateRecipe(generic.UpdateView):
     model = Recipe
     template_name = "updaterecipe.html"
-    fields = ['title', 'description', 'ingredients', 'recipe_image', 'cook_time']
+    form_class = RecipeForm
+    success_url = reverse_lazy('home')
+    
     

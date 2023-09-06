@@ -7,8 +7,10 @@
  
 
 <div class="container-fluid">
+  
     <h1 class="display-4 text-center">{{ recipe.title }}</h1>
     <hr>
+    
     
     {% if "placeholder" in recipe.recipe_image.url %}
     <img src="{% static 'images/africa.webp' %}" class="details-img" alt="Placeholder Image">
