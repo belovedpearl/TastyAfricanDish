@@ -21,13 +21,15 @@ class AddRecipe(generic.CreateView):
     model = Recipe
     form_class = RecipeForm
     template_name = "addrecipe.html"
-    success_url = reverse_lazy('home')
 
 
 class UpdateRecipe(generic.UpdateView):
     model = Recipe
     template_name = "updaterecipe.html"
     form_class = RecipeForm
+  
+    
+class DeleteRecipe(generic.DeleteView):
+    model = Recipe
+    template_name = "deleterecipe.html"
     success_url = reverse_lazy('home')
-    
-    

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Delete recipe {% endblock%}
+{% block content %}
+
+{% load crispy_forms_tags %}
+<h1>Delete: {{recipe.title }} </h1>
+<div class="form-group">
+    <form method="POST" action="{% url 'deleterecipe' slug=recipe.slug %}">
+        {% csrf_token %}
+        <strong>Are you sure you want to delete this recipe?</strong><br><br>
+        <button>Delete</button>
+    </form>
+</div>
+
+{% endblock %}
