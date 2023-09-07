@@ -53,6 +53,23 @@ nav{
     width: 100%;
 }
 
+/*__________ form ____________*/
+form{
+    width: 50%;
+}
+
+
+/*____________ Recipe Details Page __________*/
+.recipeTitleBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recipeTitle {
+    margin-right: 20px;
+}
+
 /*________________  Footer __________________ */
 .dark-bg {
     background-color: #5a6570;

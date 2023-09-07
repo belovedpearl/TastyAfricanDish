@@ -7,8 +7,14 @@
  
 
 <div class="container-fluid">
-  
-    <h1 class="display-4 text-center">{{ recipe.title }}</h1>
+      <div class="recipeTitleBox">
+        <h1 class="display-4 text-center recipeTitle">{{ recipe.title }}</h1>
+        <a class="btn" href="{% url 'updaterecipe' recipe.slug %}">
+            <i class="fas fa-edit me-2"></i> 
+        </a>
+        <i class="fas fa-trash me-2"></i>
+    
+        </div>
     <hr>
     
     
@@ -38,6 +44,7 @@
 
     <div class="text-center">
     <a class="btn btn-secondary btn-lg" href="#" role="button"><i class="fas fa-arrow-left"></i> Home</a>
+    
     </div>
   </div>
  
