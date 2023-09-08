@@ -3,6 +3,7 @@
 {% block title %} Update recipe {% endblock%}
 {% block content %}
 
+{% if user.is_authenticated %}
 {% load crispy_forms_tags %}
 <h1>Update Recipe</h1>
 <div class="form-group">
@@ -11,5 +12,10 @@
         {% crispy form %}
     </form>
 </div>
+{% else %}
+
+<div class="text-center">You do not have access to this page.</div>
+
+{% endif %}
 
 {% endblock %}

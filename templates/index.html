@@ -28,13 +28,16 @@
                                                              
                                     <p><span class="author">Posted By: {{ recipe.author }}
 
-                                        </span> 
-                                            <a href="{% url 'updaterecipe' recipe.slug %}">
-                                                <i class="fas fa-edit me-2"></i> 
-                                            </a>
+                                        </span>
+                                        {% if user.is_authenticated %}
+                                            <a href="{% url 'updaterecipe' recipe.slug %}"><i class="fas fa-edit me-2"></i></a> 
+                                           
+                                        
                                             <a href="{% url 'deleterecipe' recipe.slug %}">
                                                 <i class="fas fa-trash me-2"></i>
                                             </a>
+                                            {% endif %}
+                                            
                                         </span>
                                     </p>
                                     
