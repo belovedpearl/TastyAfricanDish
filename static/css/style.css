@@ -5,6 +5,13 @@ body {
     color: #5a6570;
 }
 
+.active{
+    border-bottom: 1px solid #184E20;
+    background-color: rgb(230, 32, 65);
+    color: white;
+    font-weight: 900; 
+}
+
 /*_______________ Logo _________________ */
 #life{
     font-family:'Great Vibes', cursive;
@@ -28,7 +35,7 @@ body {
     height: 250px;
 }
 .author{
-    margin-right: 20px;
+    margin-right: 30px;
 }
 .details-img{
     width:100%;
@@ -57,6 +64,17 @@ nav{
 form{
     width: 100%;
 }
+
+.changerecipe{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.changerecipeform{
+    width: 60%;
+}
+
 
 
 /*____________ Recipe Details Page __________*/

@@ -4,7 +4,6 @@
 
 <div class="container-fluid">
     <div class="row">
-
         <!-- Recipe Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
@@ -13,7 +12,7 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                                <a href="{% url 'recipe-detail' recipe.slug %}" class="recipe-link">
+                                <a href="{% url 'recipe-detail' recipe.slug %}" class="recipe-link" aria-label="Link to the Recipe detail page">
                                     <h2 class="card-title">{{ recipe.title }}</h2>                                 
                                 </a>
                                 {% if "placeholder" in recipe.recipe_image.url %}
@@ -26,18 +25,18 @@
                                 <div class="image-flash">  
                                     <p class="text-center">{{ recipe.description }}</p> 
                                                              
-                                    <p><span class="author">Posted By: {{ recipe.author }}
-
-                                        </span>
+                                    <p><span class="author">Posted By: {{ recipe.author }}</span>
+                                        <span>
                                         {% if user.is_authenticated %}
-                                            <a href="{% url 'updaterecipe' recipe.slug %}"><i class="fas fa-edit me-2"></i></a> 
+                                        <a href="{% url 'updaterecipe' recipe.slug %}">
+                                            <i class="fas fa-edit me-2"></i>
+                                        </a> 
                                            
                                         
-                                            <a href="{% url 'deleterecipe' recipe.slug %}">
-                                                <i class="fas fa-trash me-2"></i>
-                                            </a>
-                                            {% endif %}
-                                            
+                                        <a href="{% url 'deleterecipe' recipe.slug %}">
+                                            <i class="fas fa-trash me-2"></i>
+                                        </a>
+                                        {% endif %}
                                         </span>
                                     </p>
                                     
@@ -48,7 +47,7 @@
   
                             </div>
                             
-                            <hr />
+                            <hr>
                             <p class="card-text text-muted h6"><small><span class="date_created">{{ recipe.date_created }}</span> </small><i class="far fa-heart"></i>
                                 {{ recipe.number_of_likes }}</p>
                         </div>

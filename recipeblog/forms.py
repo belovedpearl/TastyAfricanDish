@@ -13,8 +13,8 @@ class RecipeForm(forms.ModelForm):
             'author': forms.Select(attrs={'class': 'form-control'}),
             'description': forms.TextInput(attrs={'class': 'form-control'}),
             'ingredients': forms.Textarea(attrs={'class': 'form-control'}),
-            'instruction': forms.Textarea(attrs={'class': 'form-control'})       
-            
+            'instruction': forms.Textarea(attrs={'class': 'form-control'}),
+            'cook_time': forms.NumberInput(attrs={'class': 'form-control', 'style': 'margin-bottom: 10px;', 'placeholder':'in minutes'}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -31,5 +31,5 @@ class RecipeForm(forms.ModelForm):
             Field('instructions'),
             Field('recipe_image'),
             Field('cook_time'),
-            Submit('submit', 'Submit', css_class='btn btn-secondary btn-lg')
+            Submit('submit', 'Submit', css_class='btn btn-secondary btn-lg', style='margin-bottom: 10px;')
         )

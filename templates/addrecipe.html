@@ -2,19 +2,19 @@
 {% load static %}
 {% block title %} Add new recipe {% endblock%}
 {% block content %}
+<!-- Prevent external access from someone familiar with the link -->
 {% if user.is_authenticated %}
 {% load crispy_forms_tags %}
-
-<div class="form-group">
-    <form method="POST" class="my-form">
+<div class="changerecipe">
+    <div class="form-group changerecipeform">
+        <!-- Insert form data   -->
         {% csrf_token %}
         {% crispy form %}
-    </form>
+    </div>
 </div>
-
 {% else %}
-
-<div class="text-center">You do not have access to this page.<br> Signup to add African Recipes</div>
+<div 
+class="text-center">You do not have access to this page.<br> Signup to add African Recipes</div>
 
 {% endif %}
 

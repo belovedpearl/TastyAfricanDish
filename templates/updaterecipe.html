@@ -6,11 +6,13 @@
 {% if user.is_authenticated %}
 {% load crispy_forms_tags %}
 <h1>Update Recipe</h1>
-<div class="form-group">
-    <form method="POST" action="{% url 'updaterecipe' slug=recipe.slug %}">
-        {% csrf_token %}
-        {% crispy form %}
-    </form>
+<div class="changerecipe">
+    <div class="form-group changerecipeform">
+        <!-- <form method="POST" action="{% url 'updaterecipe' slug=recipe.slug %}"> -->
+            {% csrf_token %}
+            {% crispy form %}
+        <!-- </form> -->
+    </div>
 </div>
 {% else %}
 

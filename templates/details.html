@@ -4,26 +4,25 @@
 {% block title %} {{ recipe.slug }} {% endblock %}
 
 {% block content %}
- 
+<!-- Prevent external access from someone familiar with the link -->
+{% if user.is_authenticated %}
 
 <div class="container-fluid">
-      <div class="recipeTitleBox">
+    <div class="recipeTitleBox">
         <h1 class="display-4 text-center recipeTitle">{{ recipe.title }}</h1>
         
         {% if user.is_authenticated %}
-        <a class="btn" href="{% url 'updaterecipe' recipe.slug %}">
+        <a class="btn" href="{% url 'updaterecipe' recipe.slug %}" aria-label="Click to update {{ recipe.title }}">
             <i class="fas fa-edit me-2"></i> 
         </a>
         
-        <a href="{% url 'deleterecipe' recipe.slug %}">
-          <i class="fas fa-trash me-2"></i>
-      </a>
-      {% endif %}
-    
-        </div>
+        <a href="{% url 'deleterecipe' recipe.slug %}" aria-label="Click to delete {{ recipe.title }}">
+            <i class="fas fa-trash me-2"></i>
+        </a>
+        {% endif %}  
+    </div>
     <hr>
-    
-    
+     
     {% if "placeholder" in recipe.recipe_image.url %}
     <img src="{% static 'images/africa.webp' %}" class="details-img" alt="Placeholder Image">
     {% else %}
@@ -36,23 +35,33 @@
 
     <hr>
     <div class="row">
-      <div class="col-md-6">
-          <h3 class="d-inline">Preparation Time:</h3>
-          <span class="d-inline ml-2">{{ recipe.cook_time }} minutes</span>
-      </div>
-  </div>
-  <hr>
-
-    
-    <h3>How to make {{recipe.title}} </h3>
-    <p>{{ recipe.instructions | safe }}</p>
-    <hr >
-
-    <div class="text-center">
-    <a class="btn btn-secondary btn-lg" href="#" role="button"><i class="fas fa-arrow-left"></i> Home</a>
-    
+        <div class="col-md-6">
+            <h3 class="d-inline">Preparation Time:</h3>
+            <span class="d-inline ml-2">{{ recipe.cook_time }} minutes</span>
+        </div>
     </div>
-  </div>
- 
+</div>
 
+<hr>
+
+    
+<h3>How to make {{recipe.title}} </h3>
+<p>{{ recipe.instructions | safe }}</p>
+<hr >
+
+<div class="text-center">
+    <a class="btn btn-secondary btn-lg" href="{% url 'home' %}" role="button" aria-label="Back home">
+        <i class="fas fa-arrow-left"></i> 
+        Home
+    </a>
+</div>
+
+{% else %}
+<div class="text-center">
+  You do not have access to this page.
+  <br> 
+  Signup to our community to have access to AFRICAN RECIPES.
+</div>
+
+ {% endif %}
 {% endblock %}
