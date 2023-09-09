@@ -27,7 +27,7 @@
                                                              
                                     <p><span class="author">Posted By: {{ recipe.author }}</span>
                                         <span>
-                                        {% if user.is_authenticated %}
+                                        {% if user.is_authenticated and request.user == recipe.author %}
                                         <a href="{% url 'updaterecipe' recipe.slug %}">
                                             <i class="fas fa-edit me-2"></i>
                                         </a> 

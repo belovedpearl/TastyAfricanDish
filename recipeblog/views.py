@@ -42,8 +42,8 @@ class UpdateRecipe(generic.UpdateView):
     model = Recipe
     template_name = "updaterecipe.html"
     form_class = RecipeForm
+
   
-    
 class DeleteRecipe(generic.DeleteView):
     model = Recipe
     template_name = "deleterecipe.html"
