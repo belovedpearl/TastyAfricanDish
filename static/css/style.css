@@ -7,7 +7,7 @@ body {
 
 .active{
     border-bottom: 1px solid #184E20;
-    background-color: rgb(230, 32, 65);
+    background-color: #FF6B6B;
     color: white;
     font-weight: 900; 
 }

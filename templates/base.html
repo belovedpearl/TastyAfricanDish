@@ -51,7 +51,7 @@
                         <a class="nav-link" href="{% url 'account_logout' %}" aria-label="Sign out Page">Logout</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'add_recipe' %}" aria-label="Add new recipe page">Add Recipe</a>
+                        <a class="nav-link {% if url_name == 'add_recipe' %} active {% endif %}" href="{% url 'add_recipe' %}" aria-label="Add new recipe page">Add Recipe</a>
                     </li>
 
                     {% else %}

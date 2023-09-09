@@ -9,7 +9,14 @@ class RecipeView(generic.ListView):
     model = Recipe
     queryset = Recipe.objects.filter(post_approved=True).order_by('-date_created')
     template_name = "index.html"
-    paginate_by = 8
+    
+    def get_context_data(self, **kwargs):
+        """
+        Add url data to the context data
+        """
+        context = super().get_context_data(**kwargs)
+        context['url_name'] = self.request.resolver_match.url_name
+        return context
 
 
 class RecipeDetails(generic.DetailView,):
@@ -21,6 +28,14 @@ class AddRecipe(generic.CreateView):
     model = Recipe
     form_class = RecipeForm
     template_name = "addrecipe.html"
+    
+    def get_context_data(self, **kwargs):
+        """
+        Add url data to the context data
+        """
+        context = super().get_context_data(**kwargs)
+        context['url_name'] = self.request.resolver_match.url_name
+        return context
 
 
 class UpdateRecipe(generic.UpdateView):

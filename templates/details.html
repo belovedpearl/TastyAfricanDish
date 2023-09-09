@@ -4,8 +4,6 @@
 {% block title %} {{ recipe.slug }} {% endblock %}
 
 {% block content %}
-<!-- Prevent external access from someone familiar with the link -->
-{% if user.is_authenticated %}
 
 <div class="container-fluid">
     <div class="recipeTitleBox">
@@ -56,12 +54,5 @@
     </a>
 </div>
 
-{% else %}
-<div class="text-center">
-  You do not have access to this page.
-  <br> 
-  Signup to our community to have access to AFRICAN RECIPES.
-</div>
 
- {% endif %}
 {% endblock %}
