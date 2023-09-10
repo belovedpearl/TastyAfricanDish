@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Create a new country {% endblock%}
+{% block content %}
+<!-- Prevent external access from someone familiar with the link -->
+{% if user.is_authenticated %}
+{% load crispy_forms_tags %}
+
+<h2>Add Country</h2>
+<p><strong>"If you don't see your country in the list, no worries! You can easily add it here."</strong></p>
+<div class="changerecipe">
+    
+    <div class="form-group changerecipeform">
+        <!-- Insert form data   -->
+        {% csrf_token %}
+        {% crispy form %}
+    </div>
+</div>
+{% else %}
+<div 
+class="text-center">You do not have access to this page.<br> Signup to add African Recipes</div>
+
+{% endif %}
+
+
+{% endblock %}

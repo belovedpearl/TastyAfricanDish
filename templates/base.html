@@ -53,6 +53,9 @@
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'add_recipe' %} active {% endif %}" href="{% url 'add_recipe' %}" aria-label="Add new recipe page">Add Recipe</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if url_name == 'add_country' %} active {% endif %}" href="{% url 'add_country' %}" aria-label="Add new country page">Add Country</a>
+                    </li>
 
                     {% else %}
 

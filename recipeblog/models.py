@@ -4,6 +4,25 @@ from cloudinary.models import CloudinaryField
 from django.urls import reverse
 from django.utils.text import slugify
 
+class Country(models.Model):
+    """
+    Countries Model
+    """
+    name = models.CharField(max_length=200, unique=True)
+    country_approved = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
+        
+    def get_absolute_url(self):
+        """
+        Returns the URL back home
+        """
+        return reverse('home')
+
 
 class Recipe(models.Model):
     """
@@ -19,7 +38,7 @@ class Recipe(models.Model):
     instructions = models.TextField()
     recipe_image = CloudinaryField('recipeimage', default='placeholder')
     cook_time = models.PositiveIntegerField()
-    # country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='countries')
+    country = models.CharField(max_length=150, default="Africa")
     likes = models.ManyToManyField(User, related_name='recipe_like', blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)

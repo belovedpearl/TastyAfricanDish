@@ -1,9 +1,22 @@
 from django.shortcuts import render
 from django.views import generic
-from .models import Recipe
-from .forms import RecipeForm
+from .models import Recipe, Country
+from .forms import RecipeForm, CountryForm
 from django.urls import reverse_lazy
 
+
+class AddCountry(generic.CreateView):
+    model = Country
+    form_class = CountryForm
+    template_name = "addcountry.html"
+    
+    def get_context_data(self, **kwargs):
+        """
+        Add url data to the context data
+        """
+        context = super().get_context_data(**kwargs)
+        context['url_name'] = self.request.resolver_match.url_name
+        return context
 
 class RecipeView(generic.ListView):
     model = Recipe
